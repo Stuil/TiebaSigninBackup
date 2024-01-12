@@ -16,10 +16,10 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
       
-      - name: Set timezone to China/Shanghai
-        uses: jakejarvis/timezone-action@master
-        with:
-          timezone: 'Asia/Shanghai'
+      - name: Set timezone to Asia/Shanghai
+        run: |
+          sudo ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
+          sudo dpkg-reconfigure -f noninteractive tzdata
           
           
       - name: Set up JDK 1.8
