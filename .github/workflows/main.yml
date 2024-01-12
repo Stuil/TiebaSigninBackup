@@ -4,8 +4,6 @@ name: Start
 
 on:
   push:
-  branches:
-    - main
   gollum:
   schedule:
     - cron: '30 2,5,10 * * *'
